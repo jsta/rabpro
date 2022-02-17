@@ -6,9 +6,10 @@
   <title>Index &mdash; rabpro  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -39,14 +40,22 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Setup:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install/index.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="background/index.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data/index.html">GEE and Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure/index.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="examples/notebooks/basic_example.html">Basic example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/notebooks/full_example.html">Full example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/notebooks/basin_stats.html">Basin stats examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellanea:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="contributing/index.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="issues/index.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references/index.html">Citing rabpro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apiref/index.html">API Reference</a></li>
 </ul>
 
@@ -77,12 +86,11 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#_"><strong>_</strong></a>
+ <a href="#A"><strong>A</strong></a>
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
- | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
@@ -97,15 +105,11 @@
  | <a href="#X"><strong>X</strong></a>
  
 </div>
-<h2 id="_">_</h2>
+<h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.core.profiler.__init__">__init__() (rabpro.core.profiler method)</a>
-
-      <ul>
-        <li><a href="apiref/rabpro.html#rabpro.subbasin_stats.Dataset.__init__">(rabpro.subbasin_stats.Dataset method)</a>
+      <li><a href="apiref/rabpro.html#rabpro.utils.area_4326">area_4326() (in module rabpro.utils)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -113,8 +117,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.core.profiler.basin_stats">basin_stats() (rabpro.core.profiler method)</a>
-</li>
-      <li><a href="apiref/rabpro.html#rabpro.merit_utils.blob_to_polygon_shapely">blob_to_polygon_shapely() (in module rabpro.merit_utils)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -128,11 +130,11 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.utils.clear_directory">clear_directory() (in module rabpro.utils)</a>
+      <li><a href="apiref/rabpro.html#rabpro.subbasin_stats.compute">compute() (in module rabpro.subbasin_stats)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.elev_profile.compute_dists">compute_dists() (in module rabpro.elev_profile)</a>
+      <li><a href="apiref/rabpro.html#rabpro.utils.coords_to_merit_tile">coords_to_merit_tile() (in module rabpro.utils)</a>
 </li>
       <li><a href="apiref/rabpro.html#rabpro.utils.crop_binary_coords">crop_binary_coords() (in module rabpro.utils)</a>
 </li>
@@ -144,11 +146,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.subbasin_stats.Dataset">Dataset (class in rabpro.subbasin_stats)</a>
 </li>
+      <li><a href="apiref/rabpro.html#rabpro.core.profiler.delineate_basin">delineate_basin() (rabpro.core.profiler method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.core.profiler.delineate_basins">delineate_basins() (rabpro.core.profiler method)</a>
+      <li><a href="apiref/rabpro.html#rabpro.utils.dist_from_da">dist_from_da() (in module rabpro.utils)</a>
 </li>
-      <li><a href="apiref/rabpro.html#rabpro.subbasins.delineate_subbasins">delineate_subbasins() (in module rabpro.subbasins)</a>
+      <li><a href="apiref/rabpro.html#rabpro.data_utils.download_hydrobasins">download_hydrobasins() (in module rabpro.data_utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -165,26 +169,14 @@
   </ul></td>
 </tr></table>
 
-<h2 id="F">F</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.subbasins.find_contributing_basins">find_contributing_basins() (in module rabpro.subbasins)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.merit_utils.get_basin_pixels">get_basin_pixels() (in module rabpro.merit_utils)</a>
-</li>
       <li><a href="apiref/rabpro.html#rabpro.utils.get_datapaths">get_datapaths() (in module rabpro.utils)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.utils.get_exportpaths">get_exportpaths() (in module rabpro.utils)</a>
-</li>
-      <li><a href="apiref/rabpro.html#rabpro.elev_profile.get_rc_values">get_rc_values() (in module rabpro.elev_profile)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -201,10 +193,6 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.merit_utils.idcs_to_geopolygons">idcs_to_geopolygons() (in module rabpro.merit_utils)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.subbasins.initial_basin_chain">initial_basin_chain() (in module rabpro.subbasins)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -225,18 +213,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.elev_profile.main">main() (in module rabpro.elev_profile)</a>
-
-      <ul>
-        <li><a href="apiref/rabpro.html#rabpro.subbasin_stats.main">(in module rabpro.subbasin_stats)</a>
 </li>
-      </ul></li>
       <li><a href="apiref/rabpro.html#rabpro.subbasins.main_hb">main_hb() (in module rabpro.subbasins)</a>
 </li>
       <li><a href="apiref/rabpro.html#rabpro.subbasins.main_merit">main_merit() (in module rabpro.subbasins)</a>
 </li>
       <li><a href="apiref/rabpro.html#rabpro.merit_utils.map_cl_pt_to_flowline">map_cl_pt_to_flowline() (in module rabpro.merit_utils)</a>
 </li>
-      <li><a href="apiref/rabpro.html#rabpro.subbasins.map_points_to_chain">map_points_to_chain() (in module rabpro.subbasins)</a>
+      <li><a href="apiref/rabpro.html#rabpro.data_utils.merit_hydro">merit_hydro() (in module rabpro.data_utils)</a>
 </li>
       <li>
     module
@@ -266,18 +250,10 @@
       <li><a href="apiref/rabpro.html#rabpro.merit_utils.neighborhood_vals_from_raster">neighborhood_vals_from_raster() (in module rabpro.merit_utils)</a>
 </li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.merit_utils.nrows_and_cols_from_search_radius">nrows_and_cols_from_search_radius() (in module rabpro.merit_utils)</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="apiref/rabpro.html#rabpro.utils.parse_path">parse_path() (in module rabpro.utils)</a>
-</li>
-  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="apiref/rabpro.html#rabpro.core.profiler">profiler (class in rabpro.core)</a>
 </li>
@@ -339,8 +315,6 @@
 </li>
       </ul></li>
       <li><a href="apiref/rabpro.html#rabpro.utils.raster_extents">raster_extents() (in module rabpro.utils)</a>
-</li>
-      <li><a href="apiref/rabpro.html#rabpro.utils.regionprops">regionprops() (in module rabpro.utils)</a>
 </li>
   </ul></td>
 </tr></table>

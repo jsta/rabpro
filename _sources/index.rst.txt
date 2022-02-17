@@ -6,22 +6,36 @@
 Welcome to rabpro's documentation!
 ==================================
 
-RaBPro provides methods to compute subbasin geometries from river centerline
-coordinates, and compute statistics over these subbasins using `Google Earth
-Engine <https://developers.google.com/earth-engine/>`_.
+rabpro provides methods to compute subbasin geometries from coordinate pairs, and compute statistics over these subbasins using `Google Earth Engine <https://developers.google.com/earth-engine/>`_.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Setup:
+   :hidden:
+   
+   install/index
+   configure/index   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Examples:
+   :hidden:
+   :glob:
+      
+   examples/notebooks/basic_example.ipynb
+   examples/notebooks/full_example.ipynb
+   examples/notebooks/basin_stats.ipynb
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Miscellanea:
    :hidden:
 
-   install/index
-   background/index
-   data/index
-   examples/notebooks/basic_example
    contributing/index
    issues/index
+   references/index
    apiref/index
+
 
 .. panels::
 
@@ -30,23 +44,23 @@ Engine <https://developers.google.com/earth-engine/>`_.
         :type: ref
         :text: Installation
         :classes: btn-link stretched-link font-weight-bold
-   ---   
+   ---    
    :card: + text-center bg-secondary
-   .. link-button:: background/index
+   .. link-button:: configure/index
         :type: ref
-        :text: Background
-        :classes: btn-link stretched-link font-weight-bold
-   ---   
-   :card: + text-center bg-secondary
-   .. link-button:: data/index
-        :type: ref
-        :text: GEE and Data
+        :text: Configuration
         :classes: btn-link stretched-link font-weight-bold
    ---
    :card: + text-center bg-secondary
    .. link-button:: examples/notebooks/basic_example
         :type: ref
         :text: Basic example
+        :classes: btn-link stretched-link font-weight-bold
+   ---
+   :card: + text-center bg-secondary
+   .. link-button:: examples/notebooks/full_example
+        :type: ref
+        :text: Full example
         :classes: btn-link stretched-link font-weight-bold
    ---
    :column: col-lg-12 p-2

@@ -7,9 +7,10 @@
   <title>rabpro &mdash; rabpro  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,22 +42,30 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../background/index.html">Background</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../data/index.html">GEE and Data</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Setup:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configure/index.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../examples/notebooks/basic_example.html">Basic example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/notebooks/full_example.html">Full example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/notebooks/basin_stats.html">Basin stats examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellanea:</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">Citing rabpro</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">rabpro</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rabpro-core-py">RaBPro (core.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rabpro-core-py">rabpro (core.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-utility-functions-data-utils-py">Data utility functions (data_utils.py)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#elevation-profile-computation-elev-profile-py">Elevation Profile Computation (elev_profile.py)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#merit-utilities-merit-utils-py">MERIT Utilities (merit_utils.py)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#subbasin-statistics-subbasin-stats-py">Subbasin Statistics (subbasin_stats.py)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#subbasin-computation-subbasins-py">Subbasin Computation (subbasins.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elevation-profile-computation-elev-profile-py">Elevation profile computation (elev_profile.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merit-utilities-merit-utils-py">MERIT utilities (merit_utils.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subbasin-statistics-subbasin-stats-py">Subbasin statistics (subbasin_stats.py)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subbasin-delineation-subbasins-py">Subbasin delineation (subbasins.py)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#utility-functions-utils-py">Utility functions (utils.py)</a></li>
 </ul>
 </li>
@@ -81,7 +90,6 @@
           <li><a href="index.html">API Reference</a> &raquo;</li>
       <li>rabpro</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/apiref/rabpro.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -116,12 +124,12 @@
 <section id="rabpro">
 <span id="id1"></span><h1>rabpro<a class="headerlink" href="#rabpro" title="Permalink to this headline"></a></h1>
 <span class="target" id="module-rabpro.core"></span><section id="rabpro-core-py">
-<h2>RaBPro (core.py)<a class="headerlink" href="#rabpro-core-py" title="Permalink to this headline"></a></h2>
-<p>Class for running RaBPro commands on your data.</p>
+<h2>rabpro (core.py)<a class="headerlink" href="#rabpro-core-py" title="Permalink to this headline"></a></h2>
+<p>Class for running rabpro commands on your data.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="rabpro.core.profiler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rabpro.core.</span></span><span class="sig-name descname"><span class="pre">profiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_merit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild_vrts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler" title="Permalink to this definition"></a></dt>
-<dd><p>The profiler class organizes data and methods for using RaBPro. This is
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rabpro.core.</span></span><span class="sig-name descname"><span class="pre">profiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild_vrts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler" title="Permalink to this definition"></a></dt>
+<dd><p>The profiler class organizes data and methods for using rabpro. This is
 a parent class to the centerline and point classes which inherit profiler
 methods and attributes. You should use <cite>rabpro.profiler</cite> rather than
 <cite>rabpro.core.profiler</cite>.</p>
@@ -129,14 +137,12 @@ methods and attributes. You should use <cite>rabpro.profiler</cite> rather than
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coords</strong><span class="classifier">tuple OR list OR str OR GeoDataFrame</span></dt><dd><p>Coordinates of point(s) to delineate. A single point may be provided as
-a (lat, lon) tuple. If a river centerline is being provided, its points
-must be arranged US-&gt;DS. River centerline coordinates may be provided as
-a list of (lat, lon) pairs. Point(s) may also be provided via a
+a (lat, lon) tuple. Point(s) may also be provided via a
 shapefile or .csv file. If provided as .csv file, the columns must be
 labeled ‘latitude’ and ‘longitude’. If a shapefile path is provided, the
 shapefile may also contain columns for widths and/or along-valley
 distances. These columns should have “width” and “distance” somewhere in
-their column names, respectively, in order for RaBPro to exploit them.</p>
+their column names, respectively, in order for rabpro to exploit them.</p>
 </dd>
 <dt><strong>da</strong><span class="classifier">number</span></dt><dd><p>Represents the drainage area in square kilometers of the downstream-most
 point in the provided coords.</p>
@@ -170,11 +176,6 @@ point in the provided coords.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="rabpro.core.profiler.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_merit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild_vrts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="rabpro.core.profiler.basin_stats">
 <span class="sig-name descname"><span class="pre">basin_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reducer_funcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.basin_stats" title="Permalink to this definition"></a></dt>
 <dd><p>Computes watershed statistics.</p>
@@ -196,17 +197,17 @@ feature.set(f.__name__, function(feature))</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="rabpro.core.profiler.delineate_basins">
-<span class="sig-name descname"><span class="pre">delineate_basins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.delineate_basins" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="rabpro.core.profiler.delineate_basin">
+<span class="sig-name descname"><span class="pre">delineate_basin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_merit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_hydrobasins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.delineate_basin" title="Permalink to this definition"></a></dt>
 <dd><p>Computes the watersheds for each lat/lon pair and adds their
 drainage areas to the self.gdf <cite>GeoDataFrame</cite>.</p>
-<p>There are two methods used for delineating basins: HydroBASINS and
-MERIT. HydroBASINS is appropriate for large basins (500 km^2 and
+<p>There are two methods available for delineating basins: HydroBASINS and
+MERIT. HydroBASINS is appropriate for large basins (1000 km^2 and
 larger), and MERIT can provide more detailed basin delineations for
 smaller basins. The method used depends on the size of the basin, which
 is interpreted via the provided drainage area. If no drainage area was
 provided, HydroBASINS will be used. Otherwise, if the provided drainage
-area is less than 500 km^2, MERIT will be used. MERIT may also be forced
+area is less than 1000 km^2, MERIT will be used. MERIT may also be forced
 for larger basins using the ‘force_merit’ argument when instantiating
 the profiler.</p>
 <dl class="field-list simple">
@@ -214,7 +215,11 @@ the profiler.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>search_radius</strong><span class="classifier">numeric, optional</span></dt><dd><p>in meters, by default None</p>
 </dd>
-<dt><strong>map_only</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default False</p>
+<dt><strong>map_only</strong><span class="classifier">bool, optional</span></dt><dd><p>If we only want to map the point and not delineate the basin, by default False</p>
+</dd>
+<dt><strong>force_merit</strong><span class="classifier">bool, optional</span></dt><dd><p>Forces the use of MERIT to delineate basins.</p>
+</dd>
+<dt><strong>force_hydrobasins</strong><span class="classifier">bool, optional</span></dt><dd><p>Forces the use of HydroBASINS to delineate basins.</p>
 </dd>
 </dl>
 </dd>
@@ -223,9 +228,21 @@ the profiler.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="rabpro.core.profiler.elev_profile">
-<span class="sig-name descname"><span class="pre">elev_profile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.elev_profile" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">elev_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dist_to_walk_km</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.core.profiler.elev_profile" title="Permalink to this definition"></a></dt>
 <dd><p>Compute the elevation profile. The profile is computed such that the
 provided coordinate is the centerpoint (check if this is true).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dist_to_walk_km</strong><span class="classifier">numeric</span></dt><dd><p>The distance to trace the elevation profile from the provided
+point. This distance applies to upstream and downstream–i.e. the
+total profile distance is twice this value. If not specified,
+will be automatically computed as 10 channel widths from provided 
+DA value if not specified OR 5 km, whichever is larger.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -238,7 +255,7 @@ provided coordinate is the centerpoint (check if this is true).</p>
 <dt><strong>what</strong><span class="classifier">list, optional</span></dt><dd><p>Which data should be exported? Choose from
 ‘all’ - all computed data
 ‘elevs’ - centerline json is exported with elevation and distance attributes
-‘subbasins’ - subbasins and incremental subbasins shapefiles
+‘watershed’ - watershed polygon
 The default is ‘all’.</p>
 </dd>
 </dl>
@@ -251,152 +268,108 @@ The default is ‘all’.</p>
 </section>
 <span class="target" id="module-rabpro.data_utils"></span><section id="data-utility-functions-data-utils-py">
 <h2>Data utility functions (data_utils.py)<a class="headerlink" href="#data-utility-functions-data-utils-py" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rabpro.data_utils.download_hydrobasins">
+<span class="sig-prename descclassname"><span class="pre">rabpro.data_utils.</span></span><span class="sig-name descname"><span class="pre">download_hydrobasins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datapath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.data_utils.download_hydrobasins" title="Permalink to this definition"></a></dt>
+<dd><p>Download HydroBASINS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>proxy</strong><span class="classifier">str, optional</span></dt><dd><p>Pass a proxy to requests.get, by default None</p>
+</dd>
+<dt><strong>datapath</strong><span class="classifier">str, optional</span></dt><dd><p>Directory to download and unzip HydroBasins data into; does not include
+filename. By default None</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rabpro</span> <span class="kn">import</span> <span class="n">data_utils</span>
+<span class="n">data_utils</span><span class="o">.</span><span class="n">hydrobasins</span><span class="p">()</span>    
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="rabpro.data_utils.merit_hydro">
+<span class="sig-prename descclassname"><span class="pre">rabpro.data_utils.</span></span><span class="sig-name descname"><span class="pre">merit_hydro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merit_tile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datapath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.data_utils.merit_hydro" title="Permalink to this definition"></a></dt>
+<dd><p>Download MERIT Hydro</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>merit_tile</strong><span class="classifier">str</span></dt><dd><p>MERIT Hydro tile identifier, e.g. “s30e150”. See all possible tiles
+at <a class="reference external" href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/">http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/</a> under
+“Download”</p>
+</dd>
+<dt><strong>username</strong><span class="classifier">str</span></dt><dd><p>Register at <a class="reference external" href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/">http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/</a> to
+access the username.</p>
+</dd>
+<dt><strong>password</strong><span class="classifier">str</span></dt><dd><p>Register at <a class="reference external" href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/">http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/</a> to
+access the password.</p>
+</dd>
+<dt><strong>proxy</strong><span class="classifier">str, optional</span></dt><dd><p>Pass a proxy to requests.get, by default None</p>
+</dd>
+<dt><strong>clean</strong><span class="classifier">bool, optional</span></dt><dd><p>Set False to skip overwrite of existing files, by default True</p>
+</dd>
+<dt><strong>datapath</strong><span class="classifier">str, optional</span></dt><dd><p>Manually specify a location on the local filesystem, by default None</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>if a url could not be reached, such as with an invalid tile identifier</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <span class="target" id="module-rabpro.elev_profile"></span><section id="elevation-profile-computation-elev-profile-py">
-<h2>Elevation Profile Computation (elev_profile.py)<a class="headerlink" href="#elevation-profile-computation-elev-profile-py" title="Permalink to this headline"></a></h2>
-<p>Description</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.elev_profile.compute_dists">
-<span class="sig-prename descclassname"><span class="pre">rabpro.elev_profile.</span></span><span class="sig-name descname"><span class="pre">compute_dists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.elev_profile.compute_dists" title="Permalink to this definition"></a></dt>
-<dd><p>Computes cumulative distance in meters between points in gdf.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Desc.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Desc.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>TypeError</dt><dd><p>If gdf does not contain shapely.geometry.Point values.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.elev_profile.get_rc_values">
-<span class="sig-prename descclassname"><span class="pre">rabpro.elev_profile.</span></span><span class="sig-name descname"><span class="pre">get_rc_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">9999</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.elev_profile.get_rc_values" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the values within the raster pointed to by gdobj specified by
-the row, col values in rc. Sets nodata. Returns numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>gdobj</strong><span class="classifier">[type]</span></dt><dd><p>Points to raster to get values from</p>
-</dd>
-<dt><strong>rc</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>nodata</strong><span class="classifier">int, optional</span></dt><dd><p>No data value for the raster, by default -9999</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Raster values</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
+<h2>Elevation profile computation (elev_profile.py)<a class="headerlink" href="#elevation-profile-computation-elev-profile-py" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.elev_profile.main">
-<span class="sig-prename descclassname"><span class="pre">rabpro.elev_profile.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.elev_profile.main" title="Permalink to this definition"></a></dt>
-<dd><p>Description</p>
+<span class="sig-prename descclassname"><span class="pre">rabpro.elev_profile.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_to_walk_km</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.elev_profile.main" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the elevation profile. The profile is computed such that the provided coordinate is the centerpoint (check if this is true).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Desc. Should have a column called ‘DA’ that stores drainage areas.
+<dt><strong>gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Starting point geometry. Should have a column called ‘DA’ that stores drainage areas.
 Should be in EPSG 4326 for use of the Haversine formula</p>
+</dd>
+<dt><strong>dist_to_walk_km</strong><span class="classifier">numeric</span></dt><dd><p>Distance in kilometers to walk up- and downstream of the provided,
+mapped point to resolve the flowline</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Defaults to False.</p>
 </dd>
-<dt><strong>nrows</strong><span class="classifier">int</span></dt><dd><p>Desc. Defaults to 50.</p>
+<dt><strong>nrows</strong><span class="classifier">int</span></dt><dd><p>Number of rows in the neighborhood of the point to search. Defaults to 50.</p>
 </dd>
-<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>Desc. Defaults to 50.</p>
+<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>Number of columns in the neighborhood of the point to search. Defaults to 50.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Desc.</p>
+<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>The original point layer geometry.</p>
 </dd>
-<dt><strong>merit_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Desc.</p>
-</dd>
-</dl>
+<dt><strong>merit_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>The elevation profile geometry.</p>
 </dd>
 </dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rabpro</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">56.22659</span><span class="p">,</span> <span class="o">-</span><span class="mf">130.87974</span><span class="p">)</span>
+<span class="n">rpo</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">profiler</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;basic_test&#39;</span><span class="p">)</span>
+<span class="n">cl_gdf</span><span class="p">,</span> <span class="n">merit_gdf</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">elev_profile</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">rpo</span><span class="o">.</span><span class="n">gdf</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
 <span class="target" id="module-rabpro.merit_utils"></span><section id="merit-utilities-merit-utils-py">
-<h2>MERIT Utilities (merit_utils.py)<a class="headerlink" href="#merit-utilities-merit-utils-py" title="Permalink to this headline"></a></h2>
+<h2>MERIT utilities (merit_utils.py)<a class="headerlink" href="#merit-utilities-merit-utils-py" title="Permalink to this headline"></a></h2>
 <p>Utility functions for dealing with MERIT datasets</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.merit_utils.blob_to_polygon_shapely">
-<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">blob_to_polygon_shapely</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">I</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coords'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf_amt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.blob_to_polygon_shapely" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a list of polygons or coords.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>I</strong><span class="classifier">TYPE</span></dt><dd><p>DESCRIPTION.</p>
-</dd>
-<dt><strong>ret_type</strong><span class="classifier">str, optional</span></dt><dd><p>Type of data to return. Either “coords” or “pgon”. The default is
-“coords”.</p>
-</dd>
-<dt><strong>buf_amt</strong><span class="classifier">numeric, optional</span></dt><dd><p>DESCRIPTION. By default 0.001.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>ret</strong><span class="classifier">list of numpy.ndarray or shapely.geometry.Polygon</span></dt><dd><p>DESCRIPTION.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If <cite>ret_type</cite> is not “coords” or “pgon”.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.merit_utils.get_basin_pixels">
-<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">get_basin_pixels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_cr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fdr_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fdir_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[32,</span> <span class="pre">64,</span> <span class="pre">128,</span> <span class="pre">16,</span> <span class="pre">1,</span> <span class="pre">8,</span> <span class="pre">4,</span> <span class="pre">2]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.get_basin_pixels" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the indices of all pixels draining to the pixel defined by
-start_cr.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>start_cr</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>da_obj</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>fdr_obj</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>fdir_map</strong><span class="classifier">list, optional</span></dt><dd><p>[NW, N, NE, W, E, SW, S, SE], by default [32, 64, 128, 16, 1, 8, 4, 2]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.merit_utils.idcs_to_geopolygons">
 <span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">idcs_to_geopolygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idcs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gdobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf_amt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.idcs_to_geopolygons" title="Permalink to this definition"></a></dt>
@@ -437,7 +410,7 @@ By default 0.001.</p>
 grid. Returns the row, col of the mapped-to pixel. User may provide a basin
 polygon (in EPSG:4326) if already known. This polygon will be used to ensure
 the mapped-to-flowline is the correct one. If the basin polygon is provided,
-a flow directors object and its mapping must also be provided as well as the
+a flow directions object and its mapping must also be provided as well as the
 drainage area.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -450,7 +423,7 @@ flow accumulations.</p>
 </dd>
 <dt><strong>nrows</strong><span class="classifier">int</span></dt><dd><p>Number of rows in the neighborhood of the point to search.</p>
 </dd>
-<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>Number of rows in the neighborhood of the point to search.</p>
+<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>Number of columns in the neighborhood of the point to search.</p>
 </dd>
 <dt><strong>da</strong><span class="classifier">float, optional</span></dt><dd><p>Drainage area of the point/gage if known. Units should correspond to
 those in da_obj, typically km^2. By default None.</p>
@@ -489,7 +462,7 @@ fac_obj.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.merit_utils.neighborhood_vals_from_raster">
-<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">neighborhood_vals_from_raster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vrt_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodataval=&lt;Mock</span> <span class="pre">name='mock.nan'</span> <span class="pre">id='140039305546192'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.neighborhood_vals_from_raster" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">neighborhood_vals_from_raster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vrt_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodataval=&lt;Mock</span> <span class="pre">name='mock.nan'</span> <span class="pre">id='140280437653712'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.neighborhood_vals_from_raster" title="Permalink to this definition"></a></dt>
 <dd><p>Queries a (virtual) raster object to return an array of neighbors
 surrounding a given point specified by cr (column, row). A shape can be
 provided to return as large of a neighborhood as desired; both dimensions
@@ -532,54 +505,27 @@ wrapping is desired. If None, no wrapping is performed. By default None.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="rabpro.merit_utils.nrows_and_cols_from_search_radius">
-<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">nrows_and_cols_from_search_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.nrows_and_cols_from_search_radius" title="Permalink to this definition"></a></dt>
-<dd><p>[summary]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>lon</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>lat</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>search_radius</strong><span class="classifier">numeric</span></dt><dd><p>search radius in meters</p>
-</dd>
-<dt><strong>gt</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>nrows</strong><span class="classifier">numeric</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>ncols</strong><span class="classifier">numeric</span></dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="rabpro.merit_utils.trace_flowpath">
-<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">trace_flowpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdr_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cr_stpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cr_enpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[32,</span> <span class="pre">64,</span> <span class="pre">128,</span> <span class="pre">16,</span> <span class="pre">1,</span> <span class="pre">8,</span> <span class="pre">4,</span> <span class="pre">2]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.trace_flowpath" title="Permalink to this definition"></a></dt>
-<dd><p>Walks along a flow direction grid from stpt to enpt. Returns a list of
-pixels from stpt to enpt. Walks from downstream to upstream.</p>
+<span class="sig-prename descclassname"><span class="pre">rabpro.merit_utils.</span></span><span class="sig-name descname"><span class="pre">trace_flowpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdr_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cr_stpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_to_walk_km</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[32,</span> <span class="pre">64,</span> <span class="pre">128,</span> <span class="pre">16,</span> <span class="pre">1,</span> <span class="pre">8,</span> <span class="pre">4,</span> <span class="pre">2]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.merit_utils.trace_flowpath" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a flowpath of pixels up- and downstream of cr_stpt a distance of
+dist_to_walk_km in each direction (unless the end of the flowpath is 
+reached). Flowpath is returned US-&gt;DS ordered.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>fdr_obj</strong><span class="classifier">[type]</span></dt><dd><p>flow direction object opened with gdal.Open(). Assumes flow direction
+<dt><strong>fdr_obj</strong><span class="classifier">osgeo.gdal.Dataset</span></dt><dd><p>flow direction object opened with gdal.Open(). Assumes flow direction
 symbology matches MERIT-Hydro:
 32 64 128
 16     1
 8   4  2</p>
 </dd>
-<dt><strong>da_obj</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>da_obj</strong><span class="classifier">osgeo.gdal.Dataset</span></dt><dd><p>drainage area object opened with gdal.Open()</p>
 </dd>
-<dt><strong>cr_stpt</strong><span class="classifier">[type]</span></dt><dd><p>column, row of point to start walk</p>
+<dt><strong>cr_stpt</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>column, row of point to start walk</p>
 </dd>
-<dt><strong>cr_enpt</strong><span class="classifier">[type], optional</span></dt><dd><p>column, row of point to end walk. By default None</p>
+<dt><strong>cr_enpt</strong><span class="classifier">numpy.ndarray, optional</span></dt><dd><p>column, row of point to end walk. By default None</p>
 </dd>
-<dt><strong>n_steps</strong><span class="classifier">[type], optional</span></dt><dd><p>number of steps (pixels) to walk before halting. By default None</p>
+<dt><strong>n_steps</strong><span class="classifier">int, optional</span></dt><dd><p>number of steps (pixels) to walk before halting. By default None</p>
 </dd>
 <dt><strong>fmap</strong><span class="classifier">list, optional</span></dt><dd><p>[NW, N, NE, W, E, SW, S, SE], by default [32, 64, 128, 16, 1, 8, 4, 2]</p>
 </dd>
@@ -587,7 +533,7 @@ symbology matches MERIT-Hydro:
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>tuple</dt><dd><p>(rows, cols) of flowline.</p>
 </dd>
 </dl>
 </dd>
@@ -596,11 +542,11 @@ symbology matches MERIT-Hydro:
 
 </section>
 <span class="target" id="module-rabpro.subbasin_stats"></span><section id="subbasin-statistics-subbasin-stats-py">
-<h2>Subbasin Statistics (subbasin_stats.py)<a class="headerlink" href="#subbasin-statistics-subbasin-stats-py" title="Permalink to this headline"></a></h2>
+<h2>Subbasin statistics (subbasin_stats.py)<a class="headerlink" href="#subbasin-statistics-subbasin-stats-py" title="Permalink to this headline"></a></h2>
 <p>Computes subbasin statistics using Google Earth Engine.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="rabpro.subbasin_stats.Dataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rabpro.subbasin_stats.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasin_stats.Dataset" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rabpro.subbasin_stats.</span></span><span class="sig-name descname"><span class="pre">Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mosaic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasin_stats.Dataset" title="Permalink to this definition"></a></dt>
 <dd><p>Represents one band of a GEE dataset with parameters specifying how to
 compute statistics.</p>
 <dl class="field-list simple">
@@ -628,26 +574,27 @@ Computes [“count”, “mean”] by default.</p>
 <dt><strong>mask</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether or not to mask out water in the dataset using the Global Surface
 Water occurrence band. By default False.</p>
 </dd>
+<dt><strong>mosaic</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the imageCollection in data_id will be mosaiced first. Useful
+when the imageCollection is a set of tiled images. Do not use for
+time-varying imageCollections.</p>
+</dd>
+<dt><strong>prepend_label</strong><span class="classifier">str, optional</span></dt><dd><p>Text to prepend to the exported statistics file.</p>
+</dd>
 </dl>
 </dd>
 </dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="rabpro.subbasin_stats.Dataset.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasin_stats.Dataset.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="rabpro.subbasin_stats.main">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasin_stats.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_feature_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sb_inc_gdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reducer_funcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasin_stats.main" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="rabpro.subbasin_stats.compute">
+<span class="sig-prename descclassname"><span class="pre">rabpro.subbasin_stats.</span></span><span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_feature_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basins_gdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reducer_funcs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasin_stats.compute" title="Permalink to this definition"></a></dt>
 <dd><p>Compute subbasin statistics for each dataset and band specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>dataset_list</strong><span class="classifier">list of Datasets</span></dt><dd><p>List of Dataset objects to compute statistics over.</p>
 </dd>
-<dt><strong>sb_inc_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Table of subbasin geometries.</p>
+<dt><strong>basins_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Table of subbasin geometries.</p>
 </dd>
 <dt><strong>gee_feature_path</strong><span class="classifier">string</span></dt><dd><p>Path to a GEE feature collection</p>
 </dd>
@@ -659,8 +606,6 @@ feature.set(f.__name__, function(feature))</p>
 <dt><strong>verbose</strong><span class="classifier">bool, optional</span></dt><dd><p>By default False.</p>
 </dd>
 <dt><strong>folder</strong><span class="classifier">str, optional</span></dt><dd><p>Google Drive folder to store results in, by default top-level root.</p>
-</dd>
-<dt><strong>tag</strong><span class="classifier">str, optional</span></dt><dd><p>A string to append to files created on GDrive</p>
 </dd>
 <dt><strong>test</strong><span class="classifier">bool, optional</span></dt><dd><p>Return results to the active python session in addition to GDrive</p>
 </dd>
@@ -678,19 +623,19 @@ feature.set(f.__name__, function(feature))</p>
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s2">&quot;idx&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">total_bounds</span><span class="p">)]},</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
 
 <span class="c1"># defaults</span>
-<span class="n">data</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">subbasin_stats</span><span class="o">.</span><span class="n">main</span><span class="p">(</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">subbasin_stats</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="n">Dataset</span><span class="p">(</span>
             <span class="s2">&quot;JRC/GSW1_3/MonthlyRecurrence&quot;</span><span class="p">,</span>
             <span class="s2">&quot;monthly_recurrence&quot;</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">],</span>
-    <span class="n">sb_inc_gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">,</span>
+    <span class="n">basins_gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">,</span>
     <span class="n">test</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># with time_stats specified</span>
-<span class="n">data</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">subbasin_stats</span><span class="o">.</span><span class="n">main</span><span class="p">(</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">task</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">subbasin_stats</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="n">Dataset</span><span class="p">(</span>
             <span class="s2">&quot;JRC/GSW1_3/MonthlyRecurrence&quot;</span><span class="p">,</span>
@@ -698,7 +643,7 @@ feature.set(f.__name__, function(feature))</p>
             <span class="n">time_stats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;median&quot;</span><span class="p">]</span>
         <span class="p">)</span>
     <span class="p">],</span>
-    <span class="n">sb_inc_gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">,</span>
+    <span class="n">basins_gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">,</span>
     <span class="n">test</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -706,106 +651,17 @@ feature.set(f.__name__, function(feature))</p>
 </dd></dl>
 
 </section>
-<span class="target" id="module-rabpro.subbasins"></span><section id="subbasin-computation-subbasins-py">
-<h2>Subbasin Computation (subbasins.py)<a class="headerlink" href="#subbasin-computation-subbasins-py" title="Permalink to this headline"></a></h2>
+<span class="target" id="module-rabpro.subbasins"></span><section id="subbasin-delineation-subbasins-py">
+<h2>Subbasin delineation (subbasins.py)<a class="headerlink" href="#subbasin-delineation-subbasins-py" title="Permalink to this headline"></a></h2>
 <p>Functions to calculate subbasin geometries.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="rabpro.subbasins.delineate_subbasins">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">delineate_subbasins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idxmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HB_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.delineate_subbasins" title="Permalink to this definition"></a></dt>
-<dd><p>Finds all the upstream contributing basins for each basin in idxmap.
-This could perhaps be optimized, but the current implementation just solves
-each basin in idxmap independently.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>idxmap</strong><span class="classifier">list</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>HB_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>subHB_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Contains the polygons of each basin’s catchment</p>
-</dd>
-<dt><strong>inc_df</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Contains the polygons of the incremental catchments. The upstream-most
-basin will be the largest polygon in most cases, but that depends on the
-input centerline.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.subbasins.find_contributing_basins">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">find_contributing_basins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chainids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HB_gdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.find_contributing_basins" title="Permalink to this definition"></a></dt>
-<dd><p>Given an input GeoDataFrame of HydroBasins shapefiles and a list of chainids
-denoting which basins are part of the chain, this function walks upstream
-from the upstream-most basin by following the “NEXT_DOWN” attribute until
-all possible basins are included. This process is repeated, but stops when
-the previous basin is encountered. The result is a list of sets, where each
-set contains the INCREMENTAL basin indices for each subbasin. i.e. the
-most-downstream subbasin would be found by unioning all the sets.</p>
-<p>IMPORTANT: chainids must be arranged in US-&gt;DS direction.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>chainids</strong><span class="classifier">list</span></dt><dd><p>Denotes which basins are part of the chain</p>
-</dd>
-<dt><strong>HB_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>HydroBasins shapefiles</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list of sets</dt><dd><p>each set contains the incremental basin indices for each subbasin</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.subbasins.initial_basin_chain">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">initial_basin_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">HB_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf_wid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.initial_basin_chain" title="Permalink to this definition"></a></dt>
-<dd><p>Finds the chain of drainage basins from the upstream-most centerline point
-to the sink (e.g. ocean).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>HB_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline coordinates</p>
-</dd>
-<dt><strong>buf_wid</strong><span class="classifier">float, optional</span></dt><dd><p>[description], by default 0.1</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>RuntimeError</dt><dd><p>If it cannot find a chain of basins that includes more than half the
-input centerline points</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="rabpro.subbasins.load_continent_basins">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">load_continent_basins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_twelve</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.load_continent_basins" title="Permalink to this definition"></a></dt>
-<dd><p>[summary]</p>
+<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">load_continent_basins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level_twelve</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.load_continent_basins" title="Permalink to this definition"></a></dt>
+<dd><p>Load a HydroBasins continent polygon</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline data. Should be in EPSG:4326.</p>
+<dt><strong>gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Geometry data. Should be in EPSG:4326.</p>
 </dd>
 <dt><strong>level_one</strong><span class="classifier">str</span></dt><dd><p>Path to level 1 HydroBasins data</p>
 </dd>
@@ -815,13 +671,7 @@ input centerline points</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>GeoDataFrame</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>If the provided point in cl_gdf doesn’t fall in HydroBasins</p>
+<dt>GeoDataFrame</dt><dd><p>HydroBasins</p>
 </dd>
 </dl>
 </dd>
@@ -830,12 +680,12 @@ input centerline points</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.subbasins.main_hb">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">main_hb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.main_hb" title="Permalink to this definition"></a></dt>
-<dd><p>[summary]</p>
+<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">main_hb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.main_hb" title="Permalink to this definition"></a></dt>
+<dd><p>Calculates subbasins using Hydrobasins</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline geometry</p>
+<dt><strong>gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Contains geometry and DA (drainage area) columns.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool, optional</span></dt><dd><p>By default False</p>
 </dd>
@@ -845,37 +695,47 @@ input centerline points</p>
 <dd class="field-even"><dl class="simple">
 <dt><strong>subbasins_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Contains subbasin geometries</p>
 </dd>
-<dt><strong>sb_inc_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>[description]</p>
+<dt><strong>sb_inc_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Contains the polygons of the incremental catchments. The upstream-most
+basin will be the largest polygon in most cases, but that depends on the
+input centerline.</p>
 </dd>
-<dt><strong>cl_das</strong><span class="classifier">[type]</span></dt><dd><p>Drainage areas</p>
+<dt><strong>cl_das</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Drainage areas</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>RuntimeWarning</dt><dd><p>If cl_gdf has no CRS defined</p>
+<dt>RuntimeWarning</dt><dd><p>If gdf has no CRS defined</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">rabpro</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="p">(</span><span class="mf">56.22659</span><span class="p">,</span> <span class="o">-</span><span class="mf">130.87974</span><span class="p">)</span>
+<span class="n">rpo</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">profiler</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;basic_test&#39;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">rabpro</span><span class="o">.</span><span class="n">subbasins</span><span class="o">.</span><span class="n">main_hb</span><span class="p">(</span><span class="n">rpo</span><span class="o">.</span><span class="n">gdf</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.subbasins.main_merit">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">main_merit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">51</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">51</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.main_merit" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">main_merit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">51</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">51</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.main_merit" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates subbasins using MERIT</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline coordinates</p>
+<dt><strong>gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline coordinates</p>
 </dd>
-<dt><strong>da</strong><span class="classifier">int</span></dt><dd><p>Drainage area</p>
+<dt><strong>da</strong><span class="classifier">numeric</span></dt><dd><p>Drainage area in km^2</p>
 </dd>
-<dt><strong>nrows</strong><span class="classifier">int</span></dt><dd><p>[desc], by default 51</p>
+<dt><strong>nrows</strong><span class="classifier">int</span></dt><dd><p>by default 51</p>
 </dd>
-<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>[desc], by default 51</p>
+<dt><strong>ncols</strong><span class="classifier">int</span></dt><dd><p>by default 51</p>
 </dd>
-<dt><strong>mapped</strong><span class="classifier">bool</span></dt><dd><p>Don’t return subbasins. By default False</p>
+<dt><strong>map_only</strong><span class="classifier">bool</span></dt><dd><p>If True, will map the coordinate to a MERIT flowline but not delineate 
+the basin. The default is False.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>by default False</p>
 </dd>
@@ -883,41 +743,9 @@ input centerline points</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>basins</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Table of subbasins</p>
+<dt><strong>basins</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>The delineated watershed</p>
 </dd>
-<dt><strong>mapped</strong><span class="classifier">dict</span></dt><dd><p>Contains mapped values and info</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.subbasins.map_points_to_chain">
-<span class="sig-prename descclassname"><span class="pre">rabpro.subbasins.</span></span><span class="sig-name descname"><span class="pre">map_points_to_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">HB_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cl_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chainids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.subbasins.map_points_to_chain" title="Permalink to this definition"></a></dt>
-<dd><p>Maps all centerline points to level-12 drainage basins within chain.
-1. Identify the polygon each point falls into.
-2. Push the points that don’t fall into a polygon into the nearest
-(Euclidean distance) one.
-3. Check that drainage area does not decrease as we move downstream.
-If so, assign point to previous (next upstream) basin.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>HB_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>[description]</p>
-</dd>
-<dt><strong>cl_gdf</strong><span class="classifier">GeoDataFrame</span></dt><dd><p>Centerline coordinates</p>
-</dd>
-<dt><strong>chainids</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>idxap</strong><span class="classifier">list</span></dt><dd><p>Maps each centerline point to a basin index within the HB_gdf
-GeoDataFrame</p>
-</dd>
-<dt><strong>DA</strong><span class="classifier">int</span></dt><dd><p>Drainage areas for each centerline point</p>
+<dt><strong>mapped</strong><span class="classifier">dict</span></dt><dd><p>Information about the mapping quality.</p>
 </dd>
 </dl>
 </dd>
@@ -927,6 +755,14 @@ GeoDataFrame</p>
 </section>
 <span class="target" id="module-rabpro.utils"></span><section id="utility-functions-utils-py">
 <h2>Utility functions (utils.py)<a class="headerlink" href="#utility-functions-utils-py" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="rabpro.utils.area_4326">
+<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">area_4326</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pgons_4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.area_4326" title="Permalink to this definition"></a></dt>
+<dd><p>Given a list of shapely polygons in EPSG:4326, compute the area in km^2.
+Only returns the area of the perimeter; does not yet account for holes
+in the polygon.</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.build_gee_vector_asset">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">build_gee_vector_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'basins.zip'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.build_gee_vector_asset" title="Permalink to this definition"></a></dt>
@@ -992,9 +828,9 @@ average, mode), by default “nearest”</p>
 <dt><strong>ftype</strong><span class="classifier">str, optional</span></dt><dd><p>“tif” if building from a list of tiffs, or “vrt” if building from a vrt,
 by default “tif”</p>
 </dd>
-<dt><strong>separate</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default False</p>
+<dt><strong>separate</strong><span class="classifier">bool, optional</span></dt><dd><p>See separate argument to gdalbuildvrt, by default False</p>
 </dd>
-<dt><strong>quiet</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default False</p>
+<dt><strong>quiet</strong><span class="classifier">bool, optional</span></dt><dd><p>Set True to print progress, by default False</p>
 </dd>
 </dl>
 </dd>
@@ -1016,10 +852,27 @@ by default “tif”</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="rabpro.utils.clear_directory">
-<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">clear_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Path_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.clear_directory" title="Permalink to this definition"></a></dt>
-<dd><p>Given a pathlib Path obj, clears all the contents of the directory. Does
-not remove the directory itself.</p>
+<dt class="sig sig-object py" id="rabpro.utils.coords_to_merit_tile">
+<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">coords_to_merit_tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.coords_to_merit_tile" title="Permalink to this definition"></a></dt>
+<dd><p>Identify MERIT “tiles” of interest. See <a class="reference external" href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/">http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_Hydro/</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lon</strong><span class="classifier">float</span></dt><dd></dd>
+<dt><strong>lat</strong><span class="classifier">float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rabpro</span> <span class="kn">import</span> <span class="n">utils</span>        
+<span class="n">utils</span><span class="o">.</span><span class="n">coords_to_merit_tile</span><span class="p">(</span><span class="mi">178</span><span class="p">,</span> <span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="c1"># &gt; &quot;s30e150&quot;</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">coords_to_merit_tile</span><span class="p">(</span><span class="o">-</span><span class="mi">118</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="c1"># &gt; &quot;n30w120&quot;        </span>
+<span class="n">utils</span><span class="o">.</span><span class="n">coords_to_merit_tile</span><span class="p">(</span><span class="o">-</span><span class="mf">97.355</span><span class="p">,</span> <span class="mf">45.8358</span><span class="p">)</span>
+<span class="c1"># &gt; &quot;n45w100&quot;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1049,9 +902,34 @@ that define where I should be positioned within the original image.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="rabpro.utils.dist_from_da">
+<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">dist_from_da</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">da</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nwidths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.dist_from_da" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the along-stream distance of a flowline to resolve for a given
+DA. An empirical formula provided by <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013WR013916">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013WR013916</a>
+(equation 15) is used to estimate width.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>da</strong><span class="classifier">float or numeric</span></dt><dd><p>drainage area in km^2</p>
+</dd>
+<dt><strong>nwidths</strong><span class="classifier">numeric</span></dt><dd><p>number of channel widths to set distance</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dist: float</dt><dd><p>Distance in kilometers that represents nwidths*W_bankfull where 
+W_bankfull computed according to Wilkerson et al., 2014.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.get_datapaths">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">get_datapaths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datapath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rebuild_vrts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.get_datapaths" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a dictionary of paths to all data that RaBPro uses. Also builds
+<dd><p>Returns a dictionary of paths to all data that rabpro uses. Also builds
 virtual rasters for MERIT data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1068,7 +946,7 @@ virtual rasters for MERIT data.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>contains paths to all data that RaBPro uses</p>
+<dt>dict</dt><dd><p>contains paths to all data that rabpro uses</p>
 </dd>
 </dl>
 </dd>
@@ -1084,7 +962,7 @@ virtual rasters for MERIT data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.get_exportpaths">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">get_exportpaths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.get_exportpaths" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a dictionary of paths for exporting RaBPro results. Also creates
+<dd><p>Returns a dictionary of paths for exporting rabpro results. Also creates
 “results” folders when necessary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1100,7 +978,7 @@ current working directory.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>contains paths to all output that RaBPro generates</p>
+<dt>dict</dt><dd><p>contains paths to all output that rabpro generates</p>
 </dd>
 </dl>
 </dd>
@@ -1122,7 +1000,7 @@ current working directory.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Distances between each point defined by lats, lons.</p>
+<dt>numpy.ndarray</dt><dd><p>Distance in meters between each point defined by lats, lons.</p>
 </dd>
 </dl>
 </dd>
@@ -1138,58 +1016,28 @@ approximation.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="rabpro.utils.parse_path">
-<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">parse_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.parse_path" title="Permalink to this definition"></a></dt>
-<dd><p>Parses a file or folderpath into: base, folder (where folder is the
-outermost subdirectory), filename, and extention. Filename and extension are
-empty if a directory is passed.</p>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.raster_extents">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">raster_extents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.raster_extents" title="Permalink to this definition"></a></dt>
 <dd><p>Output raster extents as [xmin, xmax, ymin, ymax]</p>
-<dl class="simple">
-<dt>Example:</dt><dd><p>import utils
-utils.raster_extents(utils.get_datapaths(rebuild_vrts=False)[“DEM_fdr”])</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="rabpro.utils.regionprops">
-<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">regionprops</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">I</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.regionprops" title="Permalink to this definition"></a></dt>
-<dd><p>Finds blobs within a binary image and returns requested properties of
-each blob.
-This function was modeled after matlab’s regionprops and is essentially
-a wrapper for skimage’s regionprops. Not all of skimage’s available blob
-properties are available here, but they can easily be added.
-Taken from RivGraph.im_utils</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>I</strong><span class="classifier">np.array</span></dt><dd><p>Binary image containing blobs.</p>
+<dt><strong>raster_path</strong><span class="classifier">str</span></dt><dd><p>Path to file</p>
 </dd>
-<dt><strong>props</strong><span class="classifier">list</span></dt><dd><p>Properties to compute for each blob. Can include ‘area’, ‘coords’,
-‘perimeter’, ‘centroid’, ‘mean’, ‘perim_len’, ‘convex_area’,
-‘eccentricity’, ‘major_axis_length’, ‘minor_axis_length’,
-‘label’.</p>
+</dl>
 </dd>
-<dt><strong>connectivity</strong><span class="classifier">int, optional</span></dt><dd><p>If 1, 4-connectivity will be used to determine connected blobs. If
-2, 8-connectivity will be used. The default is 2.</p>
-</dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
-<dt><strong>out</strong><span class="classifier">dict</span></dt><dd><p>Keys of the dictionary correspond to the requested properties. Values
-for each key are lists of that property, in order such that, e.g., the
-first entry of each property’s list corresponds to the same blob.</p>
-</dd>
-<dt><strong>Ilabeled</strong><span class="classifier">np.array</span></dt><dd><p>Image where each pixel’s value corresponds to its blob label. Labels
-can be returned by specifying ‘label’ as a property.</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list</dt><dd><p>[xmin, xmax, ymin, ymax]</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rabpro</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="n">utils</span><span class="o">.</span><span class="n">raster_extents</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">get_datapaths</span><span class="p">(</span><span class="n">rebuild_vrts</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;DEM_fdr&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -1225,43 +1073,43 @@ floating-point round-off; see here:
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.upload_gee_tif_asset">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">upload_gee_tif_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tif_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'4326'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">citation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.upload_gee_tif_asset" title="Permalink to this definition"></a></dt>
-<dd><p>[summary]</p>
+<dd><p>Upload a GeoTIFF file as a GEE raster asset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>tif_path</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>tif_path</strong><span class="classifier">str</span></dt><dd><p>Path to GeoTIFF file</p>
 </dd>
-<dt><strong>gee_user</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>gee_user</strong><span class="classifier">str</span></dt><dd><p>Google Earth Engine user name</p>
 </dd>
-<dt><strong>gcp_bucket</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>gcp_bucket</strong><span class="classifier">str</span></dt><dd><p>Google Cloud Platform bucket url</p>
 </dd>
-<dt><strong>title</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>GEE asset title</p>
 </dd>
-<dt><strong>gcp_folder</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>gcp_folder</strong><span class="classifier">str, optional</span></dt><dd><p>Google Cloud Platform bucket folder, by default “”</p>
 </dd>
-<dt><strong>gee_folder</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>gee_folder</strong><span class="classifier">str, optional</span></dt><dd><p>Google Earth Engine asset folder, by default “”</p>
 </dd>
-<dt><strong>time_start</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>time_start</strong><span class="classifier">str, optional</span></dt><dd><p>YYYY-MM-DD, by default “”</p>
 </dd>
-<dt><strong>epsg</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “4326”</p>
+<dt><strong>epsg</strong><span class="classifier">str, optional</span></dt><dd><p>EPSG CRS code, by default “4326”</p>
 </dd>
-<dt><strong>description</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>description</strong><span class="classifier">str, optional</span></dt><dd><p>GEE asset description text, by default “”</p>
 </dd>
-<dt><strong>citation</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>citation</strong><span class="classifier">str, optional</span></dt><dd><p>GEE asset citation text, appended to description, by default “”</p>
 </dd>
-<dt><strong>gcp_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default True</p>
+<dt><strong>gcp_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>Set False to skip GCP uploading, by default True</p>
 </dd>
-<dt><strong>gee_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default True</p>
+<dt><strong>gee_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>Set False to skip GEE uploading, by default True</p>
 </dd>
-<dt><strong>dry_run</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default False</p>
+<dt><strong>dry_run</strong><span class="classifier">bool, optional</span></dt><dd><p>Set True to skip GCP and GEE uploading, by default False</p>
 </dd>
-<dt><strong>gee_force</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default False</p>
+<dt><strong>gee_force</strong><span class="classifier">bool, optional</span></dt><dd><p>Set True to overwrite any existing GEE assets, by default False</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>NoneType</dt><dd><p>None</p>
 </dd>
 </dl>
 </dd>
@@ -1275,34 +1123,34 @@ floating-point round-off; see here:
 
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.upload_gee_vector_asset">
-<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">upload_gee_vector_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zip_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.upload_gee_vector_asset" title="Permalink to this definition"></a></dt>
-<dd><p>[summary]</p>
+<span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">upload_gee_vector_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zip_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_bucket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gcp_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gee_upload</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.upload_gee_vector_asset" title="Permalink to this definition"></a></dt>
+<dd><p>Upload a zipped shapefile as a GEE vector asset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>zip_path</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>zip_path</strong><span class="classifier">str</span></dt><dd><p>Path to zipped shapefile.</p>
 </dd>
-<dt><strong>gee_user</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>gee_user</strong><span class="classifier">str</span></dt><dd><p>Google Earth Engine user name.</p>
 </dd>
-<dt><strong>gcp_bucket</strong><span class="classifier">[type]</span></dt><dd><p>[description]</p>
+<dt><strong>gcp_bucket</strong><span class="classifier">str</span></dt><dd><p>Google Cloud Platform bucket url.</p>
 </dd>
-<dt><strong>gee_folder</strong><span class="classifier">str, optional</span></dt><dd><p>[description], by default “”</p>
+<dt><strong>gcp_folder</strong><span class="classifier">str, optional</span></dt><dd><p>Google Cloud Platform bucket folder, by default “”</p>
 </dd>
-<dt><strong>gcp_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default True</p>
+<dt><strong>gcp_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>Set False to skip GCP uploading, by default True</p>
 </dd>
-<dt><strong>gee_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>[description], by default True</p>
+<dt><strong>gee_upload</strong><span class="classifier">bool, optional</span></dt><dd><p>Set False to skip GEE uploading, by default True</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>str</dt><dd><p>GEE asset path</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>RuntimeError</dt><dd><p>[description]</p>
+<dt>RuntimeError</dt><dd><p>Throws error if gsutil is not installed or authenticated.</p>
 </dd>
 </dl>
 </dd>
@@ -1317,7 +1165,7 @@ floating-point round-off; see here:
 <dl class="py function">
 <dt class="sig sig-object py" id="rabpro.utils.validify_polygons">
 <span class="sig-prename descclassname"><span class="pre">rabpro.utils.</span></span><span class="sig-name descname"><span class="pre">validify_polygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rabpro.utils.validify_polygons" title="Permalink to this definition"></a></dt>
-<dd><p>Hacky ways to validify a polygon. If can’t be validified, returns the
+<dd><p>Hacky ways to validify a (multi)polygon. If can’t be validified, returns the
 original.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
